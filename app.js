@@ -41,7 +41,7 @@ app.use('/api/admin', adminRoute);
 app.use("/api/post", require("./routes/routes.js"));
 app.use("/api/product", require("./routes/product.js"));
 
-if(process.env.NODE_ENV === 'production'){
+if(process.env.PORT === 'production'){
     app.use(express.static(__dirname + '/dist/'));
     app.get('*', (req,res)=>{
         res.sendFile(__dirname + '/dist/index.html')
