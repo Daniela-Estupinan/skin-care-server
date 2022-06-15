@@ -1,6 +1,7 @@
 const Products = require("../models/productos");
 const fs = require("fs");
 const verify = require("../routes/verifyToken.js");
+const { join } = require("path");
 module.exports = class API{
     //fetch all posts
     static async fetchAllProducts(req,res){
@@ -54,6 +55,6 @@ module.exports = class API{
             res.status(400).json({message:err.message});
         }
     }
-
+//filter products
 
 };
