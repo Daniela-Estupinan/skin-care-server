@@ -5,7 +5,7 @@ const ProductoSchema = mongoose.Schema({
     categoryN:Number,
     category: String,
     content: String,
-    price_range:Number,
+    priceR:Number,
 });
 
 module.exports = mongoose.model("Producto", ProductoSchema);
