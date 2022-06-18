@@ -18,7 +18,7 @@ module.exports = class API{
             const post = await Post.findById(id);
             res.status(200).json(post);
         }catch(err){
-            res.stataus(404).json({message: err.message});
+            res.status(404).json({message: err.message});
         }
     }
     //create a post
