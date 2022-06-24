@@ -47,6 +47,8 @@ if(process.env.PORT === 'production'){
         res.sendFile(__dirname + '/dist/index.html')
     })
 }
+var path = require('path');
+app.use(express.static(path.join(__dirname, 'post')));
 //start server
 app.listen(port, () => console.log('Server running at http://localhost:'+port));
 
