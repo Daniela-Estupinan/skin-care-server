@@ -4,7 +4,7 @@ const API = require("../controllers/api.js")
 const multer = require('multer');
 const verify = require("./verifyToken.js");
 //multer middleware
-let storage = multer.diskStorage({
+let storage = multer.memoryStorage({
     destination: function(req,file,cb){
         cb(null, './uploads');
     },
