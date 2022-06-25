@@ -6,7 +6,6 @@ const cors = require('cors');
 const router = require('./routes/routes.js');
 const authRoute = require('./routes/auth.js');
 const adminRoute = require('./routes/admin.js');
-const { functions } = require('underscore');
 const app = express();
 
 
@@ -44,10 +43,9 @@ app.use("/api/product", require("./routes/product.js"));
 
 if(process.env.PORT === 'production'){
     app.use(express.static(__dirname + '/dist/'));
-   app.get('/', function(req,res){
+   app.get('*', (req,res)=>{
         res.sendFile(__dirname + '/dist/index.html')
     })
-   
 }
 
 app.listen(port, () => console.log('Server running at http://localhost:'+port));
